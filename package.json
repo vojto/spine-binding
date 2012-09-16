@@ -4,5 +4,5 @@
   "dependencies": {
     "spine": "~1.0.8"
   },
-  "main": "./src/spine-binding.coffee"
+  "main": "./index.js"
 }
