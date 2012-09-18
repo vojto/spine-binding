@@ -50,16 +50,12 @@ Spine.Binding =
     ###
       Binds children elements to an array. There are two modes of operation:
       
-      1. Template-based
-        Template `template` will be used to render in a `tag` for each item.
-        Data must be updated manually.
+      Options
       
-      2. View-based
-        View `child_view` will be used to render the array. Every item will be
-        passed to the view constructor.
-      
-      Shared options
-      
+      - `view` Class that should be used to render new elements. For every
+               object in the array, new instance of this class will be created
+               and the constructor will be passed hash {model: object} where
+               object is current item in the array.
       - `key` Used to identify items in data array. Must be defined and unique.
               Key can be either function or a string.
     ###
@@ -67,6 +63,8 @@ Spine.Binding =
 
   data: (data) ->
     ###
-      Updates child views based on new data array
+      Updates child views based on new data array. If view with the same key
+      already exists, it won't be re-rendered. All items will be detached and
+      re-attached to reflect sorting changes.
     ###
     @constructor._binding.update(@, data)
