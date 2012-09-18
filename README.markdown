@@ -2,7 +2,29 @@ Spine.Binding is a Spine extension that allows easy binding of data to views.
 
 ## Installation
 
-TODO
+If you're using Spine with Hem, add the following to your `package.json`:
+
+    {
+      // ...
+      "dependencies": {
+        // ...
+        "spine-binding": "git://github.com/vojto/spine-binding.git",
+      }
+    }
+
+Add the following to your `slug.json`:
+
+    {
+      // ...
+      "dependencies": [
+        // ...
+        "spine-binding"
+      ]
+    }
+
+Add this wherever you want to use Spine.Binding (add it to your `setup.coffee`):
+
+    require('spine-binding')
 
 ## Usage
 
