@@ -26,7 +26,7 @@ Add this wherever you want to use Spine.Binding (add it to your `setup.coffee`):
 
     require('spine-binding')
 
-## Usage
+## Usage`
 
 Let's say we are building a to-do list. We have `TaskListController` class that manages a list of tasks, and renders each task with `TaskController`.
 
@@ -51,6 +51,8 @@ Now, each time you want to re-render the collection, call `data` method:
         @data tasks
 
 The `data` method takes an array of models as an argument, and figures out how to update the DOM elements with minimal effort.
+
+It creates instances of `TaskController` (the single view class) and passes them items from array under key `model`.
 
 ### Arrays
 
