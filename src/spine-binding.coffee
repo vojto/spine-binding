@@ -59,7 +59,7 @@ Spine.Binding =
       - `key` Used to identify items in data array. Must be defined and unique.
               Key can be either function or a string.
     ###
-    @_binding = new Binding(options)
+    @_binding_options = options
 
   data: (data) ->
     ###
@@ -67,4 +67,5 @@ Spine.Binding =
       already exists, it won't be re-rendered. All items will be detached and
       re-attached to reflect sorting changes.
     ###
-    @constructor._binding.update(@, data)
+    @_binding or= new Binding(@constructor._binding_options)
+    @_binding.update(@, data)
